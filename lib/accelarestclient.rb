@@ -1,10 +1,12 @@
-require "accelarestclient/version"
-require "httparty"
+require 'accelarestclient/version'
+require 'accelarestclient/agencies'
+require 'httparty'
 
 module Accelarestclient
   # Your code goes here...
   
-  class AccelaBase
+  class Accelabase
+    include HTTParty
 
     def initialize(app_id,app_secret,access_token,environment,agency)
       ## The application ID (provisioned when app is created).
@@ -16,13 +18,11 @@ module Accelarestclient
       ## The environment in which the app is running.
       @environment = environment
       ## The name of the agency.
-      @agency = agency 
-      ## The API endpoint
-      @endpoint = 'https://apis.accela.com/'    
+      @agency = agency    
     end
 
-    def send_request(path,headers,query)
-      response = HTTParty.get("#{@endpoint}/#{path}",:headers => headers,:query => query)
+    def send_request(path,auth_type,query)
+      response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(query))
     end
 
     private
@@ -38,9 +38,9 @@ module Accelarestclient
       when 'AccessToken'
         headers.merge!( 'Authorization' => @access_token, 'x-accela-agency' => @agency )
       when 'AppCredentials'
-        headers.merge! ( 'x-accela-appsecret' => @agency)
+        headers['x-accela-appsecret'] = @agency
       else
-        headers.merge! ( 'x-accela-environment' => @environment)  
+        headers['x-accela-environment'] = @environment  
       end
 
       headers
@@ -55,7 +55,7 @@ module Accelarestclient
         "\\" => ".4",
         ":" => ".5",
         "*" => ".6",
-        "\\\\" => ".7",
+        "\\" => ".7",
         "<" => ".8",
         ">" => ".9",
         "|" => ".a",
