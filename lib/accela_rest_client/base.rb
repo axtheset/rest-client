@@ -1,11 +1,6 @@
-require 'accelarestclient/version'
-require 'accelarestclient/agencies'
-require 'httparty'
-
-module Accelarestclient
-  # Your code goes here...
+module AccelaRestClient
   
-  class Accelabase
+  class Base
     include HTTParty
 
     def initialize(app_id,app_secret,access_token,environment,agency)
