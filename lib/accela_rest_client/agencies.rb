@@ -1,31 +1,23 @@
 module AccelaRestClient
   class Agencies < Base
-    def initialize(app_id,app_secret,access_token,environment,agency)
-      super
-    end
-
-    def send_request(path,auth_type,query)
-      super
-    end
-
     def get_agencies()
-      send_request("/v4/agencies",'AccessToken','')
+      send_request("/v4/agencies",AuthTypes::ACCESS_TOKEN,'')
     end
 
     def get_agency(name)
-      send_request("/v4/agencies/#{name}",'AccessToken','')
+      send_request("/v4/agencies/#{name}",AuthTypes::ACCESS_TOKEN,'')
     end
 
     def get_agency_logo()
-      send_request("/v4/agencies/#{name}/logo",'AccessToken','')
+      send_request("/v4/agencies/#{name}/logo",AuthTypes::ACCESS_TOKEN,'')
     end
 
     def get_departments()
-      send_request("/v4/settings/departments",'AccessToken','')
+      send_request("/v4/settings/departments",AuthTypes::ACCESS_TOKEN,'')
     end
 
     def get_department_staff(id)
-      send_request("/v4/settings/departments/#{id}/staffs",'AccessToken','')
+      send_request("/v4/settings/departments/#{id}/staffs",AuthTypes::ACCESS_TOKEN,'')
     end
   end
 end

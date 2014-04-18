@@ -2,6 +2,7 @@ module AccelaRestClient
   
   class Base
     include HTTParty
+    require "addressable/uri"
 
     def initialize(app_id,app_secret,access_token,environment,agency)
       ## The application ID (provisioned when app is created).
@@ -17,7 +18,15 @@ module AccelaRestClient
     end
 
     def send_request(path,auth_type,query)
-      response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(query))
+      uri = Addressable::URI.new
+      uri.query_values = query.clone
+      response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(uri.query))
+    end
+
+    module AuthTypes
+       ACCESS_TOKEN = 'AccessToken'
+       APP_CREDENTIALS = 'AppCredentials'
+       NO_AUTH = 'NoAuth'
     end
 
     private
