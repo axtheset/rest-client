@@ -2,8 +2,7 @@ module AccelaRestClient
   
   class Base
     include HTTParty
-    require "addressable/uri"
-
+    
     def initialize(app_id,app_secret,access_token,environment,agency)
       ## The application ID (provisioned when app is created).
       @app_id = app_id
@@ -18,9 +17,23 @@ module AccelaRestClient
     end
 
     def send_request(path,auth_type,query)
-      uri = Addressable::URI.new
-      uri.query_values = query.clone
-      response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(uri.query))
+      send_query = ''
+      if !query.nil?
+        require "addressable/uri"
+        uri = Addressable::URI.new
+        uri.query_values = query.clone
+        send_query = uri.query
+        response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(send_query))
+      else
+        response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type))
+      end
+    end
+
+    def send_post(path,auth_type,body)
+      puts 'https://apis.accela.com' + path
+      puts set_authorization_headers(auth_type)
+      puts body.to_json
+      response = HTTParty.post('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:body => body.to_json)
     end
 
     module AuthTypes
@@ -29,7 +42,7 @@ module AccelaRestClient
        NO_AUTH = 'NoAuth'
     end
 
-    private
+    ##private
 
     def set_authorization_headers(auth_type)
       headers = {
@@ -42,9 +55,10 @@ module AccelaRestClient
       when 'AccessToken'
         headers.merge!( 'Authorization' => @access_token, 'x-accela-agency' => @agency )
       when 'AppCredentials'
-        headers['x-accela-appsecret'] = @agency
+        headers['x-accela-appsecret'] = @app_secret
       else
-        headers['x-accela-environment'] = @environment  
+        headers['x-accela-environment'] = @environment
+        headers['x-accela-agency'] = @agency  
       end
 
       headers
