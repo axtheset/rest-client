@@ -85,14 +85,14 @@ describe AccelaRestClient::Base do
     end
   end
 
-  describe '#set_authorization_headers' do
+  describe '#escape_characters' do
     
-  #  subject.class::ESCAPES.each do |k,v|
-  #    it "#{k} should translate to #{v}" do
-  #      subject.should_receipt(:escape_characters).with(v).and_return(true)
-  #      subject.escape_characters(k)
-  #    end
-  #  end  
+    subject.class::ESCAPES.each do |k,v|
+      it "#{k} should translate to #{v}" do
+        subject.should_receipt(:escape_characters).with(v).and_return(true)
+        subject.escape_characters(k)
+      end
+    end  
   end
 
 end
