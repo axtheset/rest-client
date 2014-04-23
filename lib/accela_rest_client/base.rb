@@ -16,24 +16,20 @@ module AccelaRestClient
       @agency = agency    
     end
 
-    def send_request(path,auth_type,query)
+    def send_request(path,auth_type,query={})
       send_query = ''
-      if !query.nil?
-        require "addressable/uri"
+      if query.empty?
         uri = Addressable::URI.new
         uri.query_values = query.clone
         send_query = uri.query
-        response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(send_query))
+        HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:query => escape_characters(send_query))
       else
-        response = HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type))
+        HTTParty.get('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type))
       end
     end
 
     def send_post(path,auth_type,body)
-      puts 'https://apis.accela.com' + path
-      puts set_authorization_headers(auth_type)
-      puts body.to_json
-      response = HTTParty.post('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:body => body.to_json)
+      HTTParty.post('https://apis.accela.com' + path,:headers => set_authorization_headers(auth_type),:body => body.to_json)
     end
 
     module AuthTypes

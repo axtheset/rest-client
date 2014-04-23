@@ -1,14 +1,30 @@
 require_relative './accela_rest_client'
 include AccelaRestClient
-include OmniAuth
 
 ##addresses = Addresses.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','1qR6gmKiDY7xK8EI7KSvh0stXWwAcMGJuaUUaTywl7VwBsehzxX-ObS8txFmLlCdUXHtktlfk-3C27z7tU6QLbdBIvpoFZveDznA5v6dvdaKzoi8Uld5QYP6XQXAcFvQuhhjCK-GgZTjDrMH7x9iCDvO66tzqq11BK4yJ0b4fvWuoZ-zqY1shTUrwj-ZEGvxBQBticdumVa_tL9PaMP-N9dcw3nnFxKEffg7vp6A5pAt1Rrs3n1ll1_eQ6PI6tSfBGaHRqRsQOAaXpBWfGPoyr43ucMKrtpQyVFeGGE5UZPfrdSIIxH63iReaFZ5HywRS8IrYyhOYjXEp32BE9h4tcjPTvU__-6UMPjnS64m5oZ_wdmiXOMLvZc9F7q84SjDArU2gtgtNai1frJ6Fpapcxy45WuBS2s9NMQ9RCje1noZzjJeW5HOxJcpS9YEtMGP0-hgntsjBb55WmP9IJDyFzd8-2tmLYxUga0DjQcWxGRBPpRQXv-IkY89_X1vMGfVF5-PehjNCykG74X16IlDm4z_FvNdb2TNsG2NLvDYXdfijLrUApXQnXPgdrqDvdvCyUvRkjBhIOfi3V5gZay_nZUtItM-2ILbArjPILLlP2gqncLDXjpEU3d4SUqy7DeoWZkra3MpTtrCKrJXRuDnSM_WL1rAIcBsJ3h_HiqmaL0ytCsO9EBJNZn-L1WswksI4l05ftYZtI0z8U14GwoS8EoZaqU09_VMHgnukChs53FQCIKRsFEQ1au4ab_TG_vXLPEp7FGHtQqE6mAJbjWifsPyCgEa9i1fzKDDuKQa7sIB2Fij-1emyLdG3Pj1SUYgTalX5aGiCm7QRwIwN0_x7yT7kyJo0bxEdQFyCD3UBHUNj2mklnpsvZhaKtCm3t05rKn6zwsRKdthc5FmxB0TsVtF7GMIKG0tFvaVdtuB5uBILGGhVVj60jipT1i4DTTe0','Test','ISLANDTON')
+
+#inspections = Inspections.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','3NNEE1oDVlFEbkxwQyxpi7V04jvgs3GRQpnzKxRzG3_iBlCnbJUqucF4I0U6zTsvrgQiKm3ZP1RgcOT5VwfRxmOmmJeJakGdxK_jwkG3CpW_Db2Td76gSTKZh6MZDDrT9haqQsNMxQ1eVGou6ryghjHxG0t9Lfr_CISaQz1WEZFPf7FmtnxyiPzalCTx5KMc7S09uWKu5BNZCByfFyQeSsbVx5rXNiv7vM2-YBRyhJlukunqOLc6ZSWF08UAyeFCJuIPWLnThA1X6_4EAuD25iG_rMM9ZCEMn9oCx3AT7N7-ZtfxEClfEZpENYnNU195OPjEoktvYr1b56YbZ1d46pLN62W7rnEsPVVUM6HM6B62yGf8U7LJ0VHBxRioT2W8r6QMdF5Bg8MGsDUlyt1N9OjDLeia-ArKEeFHoGAFUrvaD1q5jpJY8UW8I-Pb5qgEs-u_HYVca0M2-4qeParIoRxeTOf7k9Rtc72LsC7Y-XYzhdwSdoXceQ8oR3C4vpv1h1Lz4ugGCfbX1I3Sbaui1cSM0HIeLl1kR9-8nuCmW0yfmucASULHlCXaJBNiW892huieen2Gg1MPTN0EYBUbQswTHhDuTsZctt2xqf54VHE1','TEST','ISLANDTON')
+#puts inspections.describe_inspection_groups()
+#response = inspections.describe_inspection_types("BLD_RES")
+
+#inspection_types = JSON.parse(response.body)
+
+#inspection_types.each do |key,value|
+#    value.each do |item|
+#      puts item
+#    end
+#end
+
+#conditions = Condition.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','D2lFj57a78buNwEUCYNg57eRr7AJwgpuno4Avzfhpxy2jIb7ajDpbn3lJ2bEZtuLQGA7JzsTJ8YFdr7NLCjz-uqSKtFGOa57YV6_9WEDf446kMxyg2ed_9L2pVU1wjxB60mmz9cuikYf37GmQYPr9hlN_yrZ6O7R3Jsc008ZVBy8hFa0faNObpG5uwZwTahHgG5kzTsJKgf-b3bIWzmIfrmXiBHhioUvPLDMrQSvJXw-IXyfKLNZtA11kjVklSmXAeOyF3pNoaUWv5ppseKdCZJpa2qLhnjQ7-fhjorQJ4BHNPgdv8PIRu8X89MbYcf--dR4qmtmOj2TZzcK8cuZHWW4VMSIfGV6YcC2QYLPdspX9DcE4lF2JEKo4bQSvC_7lByA2BriGYI9Ear01mLrqF92tEW8JAx4BEhWMPxi433mDL9FpyvYVZC9I_ky4e55Dy2CE0KuKFSXgSIq09XYrw2','PROD','SOLNDEV-ENG')
+#puts conditions.get_standard_condition_of_approvals({})
 
 ##puts "get_addresses: #{addresses.get_addresses({})}"
 ##puts "get_address: #{addresses.get_address(7,{:fields => 'streetName'})}"
 ##puts "get_address_parcels: " + addresses.get_address_parcels(7,{:fields => 'city,isPrimary'})
 ##puts "get_countries: #{addresses.get_countries()}"
-##puts "get_states: #{addresses.get_states().inspect}"
+addresses = Addresses.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','gTZiLleNnDT-NAn0uR7gUmqEmnHZB1_jcJeLSNI0hnbAfo83yPnVa8FNrxe1TpXgXH1f3twGNBF4EkKWDZgxo_4fJ1n2PO-gJSkTBdROoHuSBVnIXjuA-N6H7GMki3RDQsFFGjEOdrr8GY9uALpxyoS_X-hwoPmwvmCEw-QmTYhUcSlAy9oBgJWB3zzUe6rurF5zbFjAIKRriCbJmoNNpmdr_QD_TnpzLoEY70YLtIcB-OkFgEEEf8Tf6QGUmnI5C6kWg5ftBv0IqMclzURw9HfaBUFSSSnR9tKJniNg6Rn0hI1k7ulO6A4jqCc9hyIfCiLdT6Kw91RsfI-cZLyAQpE1tI5LUbLT2f8uDk0fD7pccveX02VKADHtRBV7Vhre6q8kcBTF12vQ0t8hSc7ONNbFzWtqlG4CQjX7bk4XEzM1','TEST','ISLANDTON')
+#puts "get_addresses: #{addresses.get_addresses({})}"
+puts "get_states: #{addresses.get_states}"
 ##app = App.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','1qR6gmKiDY7xK8EI7KSvh0stXWwAcMGJuaUUaTywl7VwBsehzxX-ObS8txFmLlCdUXHtktlfk-3C27z7tU6QLbdBIvpoFZveDznA5v6dvdaKzoi8Uld5QYP6XQXAcFvQuhhjCK-GgZTjDrMH7x9iCDvO66tzqq11BK4yJ0b4fvWuoZ-zqY1shTUrwj-ZEGvxBQBticdumVa_tL9PaMP-N9dcw3nnFxKEffg7vp6A5pAt1Rrs3n1ll1_eQ6PI6tSfBGaHRqRsQOAaXpBWfGPoyr43ucMKrtpQyVFeGGE5UZPfrdSIIxH63iReaFZ5HywRS8IrYyhOYjXEp32BE9h4tcjPTvU__-6UMPjnS64m5oZ_wdmiXOMLvZc9F7q84SjDArU2gtgtNai1frJ6Fpapcxy45WuBS2s9NMQ9RCje1noZzjJeW5HOxJcpS9YEtMGP0-hgntsjBb55WmP9IJDyFzd8-2tmLYxUga0DjQcWxGRBPpRQXv-IkY89_X1vMGfVF5-PehjNCykG74X16IlDm4z_FvNdb2TNsG2NLvDYXdfijLrUApXQnXPgdrqDvdvCyUvRkjBhIOfi3V5gZay_nZUtItM-2ILbArjPILLlP2gqncLDXjpEU3d4SUqy7DeoWZkra3MpTtrCKrJXRuDnSM_WL1rAIcBsJ3h_HiqmaL0ytCsO9EBJNZn-L1WswksI4l05ftYZtI0z8U14GwoS8EoZaqU09_VMHgnukChs53FQCIKRsFEQ1au4ab_TG_vXLPEp7FGHtQqE6mAJbjWifsPyCgEa9i1fzKDDuKQa7sIB2Fij-1emyLdG3Pj1SUYgTalX5aGiCm7QRwIwN0_x7yT7kyJo0bxEdQFyCD3UBHUNj2mklnpsvZhaKtCm3t05rKn6zwsRKdthc5FmxB0TsVtF7GMIKG0tFvaVdtuB5uBILGGhVVj60jipT1i4DTTe0','Test','ISLANDTON')
 ##puts "get_app_settings: " + app.get_app_settings({})
 ##base = Base.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','1qR6gmKiDY7xK8EI7KSvh0stXWwAcMGJuaUUaTywl7VwBsehzxX-ObS8txFmLlCdUXHtktlfk-3C27z7tU6QLbdBIvpoFZveDznA5v6dvdaKzoi8Uld5QYP6XQXAcFvQuhhjCK-GgZTjDrMH7x9iCDvO66tzqq11BK4yJ0b4fvWuoZ-zqY1shTUrwj-ZEGvxBQBticdumVa_tL9PaMP-N9dcw3nnFxKEffg7vp6A5pAt1Rrs3n1ll1_eQ6PI6tSfBGaHRqRsQOAaXpBWfGPoyr43ucMKrtpQyVFeGGE5UZPfrdSIIxH63iReaFZ5HywRS8IrYyhOYjXEp32BE9h4tcjPTvU__-6UMPjnS64m5oZ_wdmiXOMLvZc9F7q84SjDArU2gtgtNai1frJ6Fpapcxy45WuBS2s9NMQ9RCje1noZzjJeW5HOxJcpS9YEtMGP0-hgntsjBb55WmP9IJDyFzd8-2tmLYxUga0DjQcWxGRBPpRQXv-IkY89_X1vMGfVF5-PehjNCykG74X16IlDm4z_FvNdb2TNsG2NLvDYXdfijLrUApXQnXPgdrqDvdvCyUvRkjBhIOfi3V5gZay_nZUtItM-2ILbArjPILLlP2gqncLDXjpEU3d4SUqy7DeoWZkra3MpTtrCKrJXRuDnSM_WL1rAIcBsJ3h_HiqmaL0ytCsO9EBJNZn-L1WswksI4l05ftYZtI0z8U14GwoS8EoZaqU09_VMHgnukChs53FQCIKRsFEQ1au4ab_TG_vXLPEp7FGHtQqE6mAJbjWifsPyCgEa9i1fzKDDuKQa7sIB2Fij-1emyLdG3Pj1SUYgTalX5aGiCm7QRwIwN0_x7yT7kyJo0bxEdQFyCD3UBHUNj2mklnpsvZhaKtCm3t05rKn6zwsRKdthc5FmxB0TsVtF7GMIKG0tFvaVdtuB5uBILGGhVVj60jipT1i4DTTe0','Test','ISLANDTON')
@@ -37,19 +53,19 @@ include OmniAuth
 #puts civic_id.get_account_profile('655d6c99-5bc3-4884-a483-dd9bd0b8638b')
 #puts civic_id.get_profile_civic_id()
 
-record = Record.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','3mRYfuKD4njIOBgkugwmsC1nZZOs1Phpyz7otAHjVTD6t4xFL0vhDVWXT-9q0doCotb4_xol4vp6U6EgLhlcPHXeYT_eikpiIBUoUbFuXCvXCDTQ0BEpyx4Qf9rO2UfuuxOdIT8ztHkK1aWd_mvqAqsIqs_yyxjWyr07fpk5T1oE9c2daTh6f656zIyM0kmhexUrV2T8cHMxBCZTQkjdy1f9yVtE7mg1jOurLhCvEW3Yb1mjce-CtIHOc4UoDkmjOKdIUBSSUUujs5OcawAVdIWGa0Dq8-qCzczJWdNFo0AdbqEiPSkv3ivg04WSesj7nqR7P4DfzXExd6JAMOA1RrFjpz3ZlWS2NVKztrnlRfxWAC-S6tgxp-NmLkhxWmcvf-jBAhPm_fjNAwStmAiU5LnPw67XaFlPml7e0gFRMxQ1','PROD','SOLNDEV-ENG')
+#record = Record.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','3mRYfuKD4njIOBgkugwmsC1nZZOs1Phpyz7otAHjVTD6t4xFL0vhDVWXT-9q0doCotb4_xol4vp6U6EgLhlcPHXeYT_eikpiIBUoUbFuXCvXCDTQ0BEpyx4Qf9rO2UfuuxOdIT8ztHkK1aWd_mvqAqsIqs_yyxjWyr07fpk5T1oE9c2daTh6f656zIyM0kmhexUrV2T8cHMxBCZTQkjdy1f9yVtE7mg1jOurLhCvEW3Yb1mjce-CtIHOc4UoDkmjOKdIUBSSUUujs5OcawAVdIWGa0Dq8-qCzczJWdNFo0AdbqEiPSkv3ivg04WSesj7nqR7P4DfzXExd6JAMOA1RrFjpz3ZlWS2NVKztrnlRfxWAC-S6tgxp-NmLkhxWmcvf-jBAhPm_fjNAwStmAiU5LnPw67XaFlPml7e0gFRMxQ1','PROD','SOLNDEV-ENG')
 
-body = {type: {group: 'Licenses',
-                                    type: 'Animal',
-                                    subType: 'Dog',
-                                    category: 'Application'}}
+#body = {type: {group: 'Licenses',
+#                                    type: 'Animal',
+#                                    subType: 'Dog',
+#                                    category: 'Application'}}
 
-puts body.to_json                                    
+#puts body.to_json                                    
 
-response = record.create_partial_record(body)
-responseHash = JSON.parse(response.body)
-puts responseHash["status"]
-puts responseHash["result"]
-responseHash.each do |key,value|
-  puts key
-end
+#response = record.create_partial_record(body)
+#responseHash = JSON.parse(response.body)
+#puts responseHash["status"]
+#puts responseHash["result"]
+#responseHash.each do |key,value|
+#  puts key
+#end

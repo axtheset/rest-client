@@ -4,20 +4,15 @@ describe AccelaRestClient::Base do
 
   subject { AccelaRestClient::Base }
   
-  let(:app_id) { double('app_id') }
-  let(:app_secret) { double('app_secret') }
-  let(:access_token) { double('access_token') }
-  let(:environment) { double('environment') }
-  let(:agency) { double('agency') }
-  let(:path) { double('path')}
-  let(:headers) { double('headers')}
-  :headers.stub({})
-  let(:query) { double('query')}
-  :query.stub({})
+  let(:app_id) { 'app_id' }
+  let(:app_secret) { 'app_secret' }
+  let(:access_token) { 'access_token' }
+  let(:environment) { 'environment' }
+  let(:agency) { 'agency' }
 
   describe '#initialize' do
+
     it 'accessing the @agency instance variable' do
-      ##subject.should_receive(:send_requiest).and_return(true)
       subject.new(app_id,app_secret,access_token,environment,agency).instance_variable_get('@agency').should == agency
     end
     it 'accessing the @app_id instance variable' do
@@ -35,10 +30,18 @@ describe AccelaRestClient::Base do
   end
 
   describe '#send_request'
+
+    let(:path) { 'path'}
+    let(:headers) { {} }
+    let(:query) { {} }
+    
     it 'send_request should return true' do
-      subject.new(app_id,app_secret,access_token,environment,agency).send_request(path,headers,query)
-      subject.should_receive(:send_request).with(path,headers,query).and_return(true)
+      #subject.new(app_id,app_secret,access_token,environment,agency).send_request(path,headers,query)
+      subject.should_receive(HTTParty::get).with(path,headers).and_return(true)
+      #subject.should_receive(:get).with(path,headers,query).and_return(true)
+      #subject.send_request
     end
+
 end
 
 
