@@ -34,7 +34,7 @@ describe AccelaRestClient::Base do
   describe '#send_request' do
 
     let(:path) { '/path'}
-    let(:headers) { {} }
+    let(:headers) { Hash.new }
     let(:query) { {key: 'value'} }
 
     
@@ -56,8 +56,8 @@ describe AccelaRestClient::Base do
   describe '#send_post' do
 
     let(:path) { '/path'}
-    let(:headers) { {} }
-    let(:body) { {} }
+    let(:headers) { Hash.new }
+    let(:body) { Hash.new }
 
     
     it 'send_post should return true' do
@@ -87,10 +87,9 @@ describe AccelaRestClient::Base do
 
   describe '#escape_characters' do
     
-    subject.class::ESCAPES.each do |k,v|
+    AccelaRestClient::Base::ESCAPES.each do |k,v|
       it "#{k} should translate to #{v}" do
-        subject.should_receipt(:escape_characters).with(v).and_return(true)
-        subject.escape_characters(k)
+        subject.escape_characters(k).should == v
       end
     end  
   end

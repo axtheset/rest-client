@@ -80,7 +80,9 @@ module AccelaRestClient
     end
 
     def escape_characters(text)
-      text.gsub(/[-!$%^&*# \\()_+|~=`{}\[\]:";'<>?,.\/]/,ESCAPES)
+      text = text.dup
+      ESCAPES.each { |k,v| text.gsub!(k, v) }
+      text
     end
   end
 

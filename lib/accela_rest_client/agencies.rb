@@ -8,11 +8,11 @@ module AccelaRestClient
       send_request("/v4/agencies/#{name}", AuthTypes::ACCESS_TOKEN)
     end
 
-    def get_agency_logo()
+    def get_agency_logo(name)
       send_request("/v4/agencies/#{name}/logo", AuthTypes::ACCESS_TOKEN)
     end
 
-    def get_departments()
+    def get_departments
       send_request("/v4/settings/departments", AuthTypes::ACCESS_TOKEN)
     end
 
