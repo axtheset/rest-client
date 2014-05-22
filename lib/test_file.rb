@@ -22,8 +22,8 @@ include AccelaRestClient
 ##puts "get_address: #{addresses.get_address(7,{:fields => 'streetName'})}"
 ##puts "get_address_parcels: " + addresses.get_address_parcels(7,{:fields => 'city,isPrimary'})
 ##puts "get_countries: #{addresses.get_countries()}"
-addresses = Addresses.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','gTZiLleNnDT-NAn0uR7gUoAwY0b9c0duQ3U0Y_lpHRJ266o5QFp6VixT3B-Tndl_d1f71YkEVR1CofDbxNvR0rbm1lAL6CAbYFs9iAL0UkVI_26L0oFkg0jmmQXunTV4r3tQIrro-Gr3z3eNXaTb2QNoJfX0N88Y3D6jmUKH5flZgj5Cm1oAp8B8B5XivKIDitd390WzkbQeQvHCwvqraAgJibe4Ct5bExXes0yFQ4Nwcf1pGMG4k10nyydHbXwTEfMIQW9vETQOz9ggXPFSlBkWNgkeBsX1IBBolNkre_z8GJvyXk-i0kPVP-4ixWawXXUh_qmtf4iH3gJkxSZLVSayE_mO8dDCNFLw7h3ESKd2ffAUVJQYy6wu96Rmr9Mz7SQQAqH--vZYnp9w6WoPNbgcfK_KdBckdBXNh2BfYjMSEv1F6d4QZS9dyb95m1yo33lCTUalS76idFseIJSR0ag_oqR4CEGCSOaO-J3U47ALGyjd5DIhggk93jJReDJvBrPvbz--x-F_X36X_yihIEXdbKxAnxp3zoPlrycHw2rEdUXPhjfrZwCDM37iQi1FwZb3GR6l1eLVg_CE2RC2jCvOfZUU3Wl5sx0d60R8Ghs1','TEST','ISLANDTON')
-puts "get_addresses: #{addresses.get_addresses({city: 'PETALUMA'})}"
+##addresses = Addresses.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','gTZiLleNnDT-NAn0uR7gUoAwY0b9c0duQ3U0Y_lpHRJ266o5QFp6VixT3B-Tndl_d1f71YkEVR1CofDbxNvR0rbm1lAL6CAbYFs9iAL0UkVI_26L0oFkg0jmmQXunTV4r3tQIrro-Gr3z3eNXaTb2QNoJfX0N88Y3D6jmUKH5flZgj5Cm1oAp8B8B5XivKIDitd390WzkbQeQvHCwvqraAgJibe4Ct5bExXes0yFQ4Nwcf1pGMG4k10nyydHbXwTEfMIQW9vETQOz9ggXPFSlBkWNgkeBsX1IBBolNkre_z8GJvyXk-i0kPVP-4ixWawXXUh_qmtf4iH3gJkxSZLVSayE_mO8dDCNFLw7h3ESKd2ffAUVJQYy6wu96Rmr9Mz7SQQAqH--vZYnp9w6WoPNbgcfK_KdBckdBXNh2BfYjMSEv1F6d4QZS9dyb95m1yo33lCTUalS76idFseIJSR0ag_oqR4CEGCSOaO-J3U47ALGyjd5DIhggk93jJReDJvBrPvbz--x-F_X36X_yihIEXdbKxAnxp3zoPlrycHw2rEdUXPhjfrZwCDM37iQi1FwZb3GR6l1eLVg_CE2RC2jCvOfZUU3Wl5sx0d60R8Ghs1','TEST','ISLANDTON')
+##puts "get_addresses: #{addresses.get_addresses({city: 'PETALUMA'})}"
 #puts "get_states: #{addresses.get_states}"
 ##app = App.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','1qR6gmKiDY7xK8EI7KSvh0stXWwAcMGJuaUUaTywl7VwBsehzxX-ObS8txFmLlCdUXHtktlfk-3C27z7tU6QLbdBIvpoFZveDznA5v6dvdaKzoi8Uld5QYP6XQXAcFvQuhhjCK-GgZTjDrMH7x9iCDvO66tzqq11BK4yJ0b4fvWuoZ-zqY1shTUrwj-ZEGvxBQBticdumVa_tL9PaMP-N9dcw3nnFxKEffg7vp6A5pAt1Rrs3n1ll1_eQ6PI6tSfBGaHRqRsQOAaXpBWfGPoyr43ucMKrtpQyVFeGGE5UZPfrdSIIxH63iReaFZ5HywRS8IrYyhOYjXEp32BE9h4tcjPTvU__-6UMPjnS64m5oZ_wdmiXOMLvZc9F7q84SjDArU2gtgtNai1frJ6Fpapcxy45WuBS2s9NMQ9RCje1noZzjJeW5HOxJcpS9YEtMGP0-hgntsjBb55WmP9IJDyFzd8-2tmLYxUga0DjQcWxGRBPpRQXv-IkY89_X1vMGfVF5-PehjNCykG74X16IlDm4z_FvNdb2TNsG2NLvDYXdfijLrUApXQnXPgdrqDvdvCyUvRkjBhIOfi3V5gZay_nZUtItM-2ILbArjPILLlP2gqncLDXjpEU3d4SUqy7DeoWZkra3MpTtrCKrJXRuDnSM_WL1rAIcBsJ3h_HiqmaL0ytCsO9EBJNZn-L1WswksI4l05ftYZtI0z8U14GwoS8EoZaqU09_VMHgnukChs53FQCIKRsFEQ1au4ab_TG_vXLPEp7FGHtQqE6mAJbjWifsPyCgEa9i1fzKDDuKQa7sIB2Fij-1emyLdG3Pj1SUYgTalX5aGiCm7QRwIwN0_x7yT7kyJo0bxEdQFyCD3UBHUNj2mklnpsvZhaKtCm3t05rKn6zwsRKdthc5FmxB0TsVtF7GMIKG0tFvaVdtuB5uBILGGhVVj60jipT1i4DTTe0','Test','ISLANDTON')
 ##puts "get_app_settings: " + app.get_app_settings({})
@@ -53,7 +53,7 @@ puts "get_addresses: #{addresses.get_addresses({city: 'PETALUMA'})}"
 #puts civic_id.get_account_profile('655d6c99-5bc3-4884-a483-dd9bd0b8638b')
 #puts civic_id.get_profile_civic_id()
 
-#record = Record.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','3mRYfuKD4njIOBgkugwmsC1nZZOs1Phpyz7otAHjVTD6t4xFL0vhDVWXT-9q0doCotb4_xol4vp6U6EgLhlcPHXeYT_eikpiIBUoUbFuXCvXCDTQ0BEpyx4Qf9rO2UfuuxOdIT8ztHkK1aWd_mvqAqsIqs_yyxjWyr07fpk5T1oE9c2daTh6f656zIyM0kmhexUrV2T8cHMxBCZTQkjdy1f9yVtE7mg1jOurLhCvEW3Yb1mjce-CtIHOc4UoDkmjOKdIUBSSUUujs5OcawAVdIWGa0Dq8-qCzczJWdNFo0AdbqEiPSkv3ivg04WSesj7nqR7P4DfzXExd6JAMOA1RrFjpz3ZlWS2NVKztrnlRfxWAC-S6tgxp-NmLkhxWmcvf-jBAhPm_fjNAwStmAiU5LnPw67XaFlPml7e0gFRMxQ1','PROD','SOLNDEV-ENG')
+record = Record.new('635330114108258996','1672c2d7ee67414692c7fbe680362e91','tsZUZYZKOaxnlkpAHVLRk6AHHSo20NbO0XAOK0eRQG1A2HyYWqG7NDlQWhlu5ZkI96BtTSRaHd7vubZdKrzCS2UljAuhlhiY4fEKG2JF6AsOJda7OY0Ujq6A1npRCupzQuQzoTliFeXpUJii-cW0KEUpEETN1uNsbyRwz3xz8g_ZoLrPBGnhcHgWTp-8FtKn9tnW9Z9JZvpvc8VtkVcsQnpEAwrmpjgeFJmpxAzi3tFUCsZJNwz4bkT15iQZNkeT25eqwP3lTTzeTj78kX0sqMrWa2tGoQw6bzbh7Cl_hSq5adYO8wSwdrPfl--q1OXW5IwpwEFTFVVmx5YBEoC_bM65GybiHEuzKp9hrLeul_ewd04Jd76pGyjALGFbVI0pb25Y2Kr3DWM5Vyqs3GxTqYruBFkrHmXRGaDYOucvIPIVgCAKquHG1j19-PMEp4QV0','TEST','ISLANDTON')
 
 #body = {type: {group: 'Licenses',
 #                                    type: 'Animal',
@@ -62,10 +62,45 @@ puts "get_addresses: #{addresses.get_addresses({city: 'PETALUMA'})}"
 
 #puts body.to_json                                    
 
+#body = {
+#
+#   displayNoticeInCitizens: true,
+#    severity: { value: 'Notice'},
+#    effectiveDate: '2014-01-01',
+#    displayNoticeInAgency: true,
+#    type: { value: 'Notice'},
+#    status: { value: 'Applied' },
+#    appliedDate: '2014-01-01',
+#    name: 'Address Range',
+#    serviceProviderCode: 'Islandton',
+#    isIncludeNameInNotice: true
+#}
+
+body = { 
+  updateRecord: {
+    contacts: nil,
+    comments: [
+      {
+        id: nil,
+        display: nil,
+        userId: nil,
+        date: nil,
+        showOnInspection: false,
+        comments: 'Test',
+        entityState: 'Added'
+      } ]
+  }
+}
+
+puts body.to_json
+
+#puts record.create_record_condition('14CAP-00000-0002M',body)
+puts record.update_record('14CAP-00000-0002M',body)
+puts record.get_record_comments('14CAP-00000-0002M')
 #response = record.create_partial_record(body)
 #responseHash = JSON.parse(response.body)
 #puts responseHash["status"]
 #puts responseHash["result"]
 #responseHash.each do |key,value|
 #  puts key
-#end
+#end#

@@ -3,7 +3,9 @@ module AccelaRestClient
   class Base
     include HTTParty
 
+    format :json
     BASE_URI = 'https://apis.accela.com'
+    base_uri "https://apis.accela.com"
 
     ESCAPES = {
       "." => ".0",
@@ -50,6 +52,16 @@ module AccelaRestClient
     def send_post(path,auth_type,body)
       self.class.post(BASE_URI + path, :headers => set_authorization_headers(auth_type), :body => body.to_json)
     end
+
+    def send_put(path,auth_type,body)
+      @options = {
+        headers: set_authorization_headers(auth_type),
+        body: body.to_json
+      }
+      self.class.put(BASE_URI + path, @options)
+    end
+
+    ## implement delete
 
     module AuthTypes
        ACCESS_TOKEN = 'AccessToken'
