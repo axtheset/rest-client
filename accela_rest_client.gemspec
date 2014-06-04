@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'accelarestclient/version'
+require 'accela_rest_client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "accelarestclient"
-  spec.version       = Accelarestclient::VERSION
+  spec.name          = "accela_rest_client"
+  spec.version       = AccelaRestClient::VERSION
   spec.authors       = ["axtheset"]
   spec.email         = ["sethaxthelm@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
@@ -21,4 +21,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "httparty"
+  spec.add_development_dependency 'rspec-core'
+  spec.add_development_dependency 'rspec-expectations'
+  spec.add_development_dependency 'rspec-mocks'
+  spec.add_development_dependency 'addressable'
+  spec.add_development_dependency 'json'
+
 end
