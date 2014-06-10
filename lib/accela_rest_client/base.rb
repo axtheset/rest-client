@@ -5,7 +5,6 @@ module AccelaRestClient
 
     format :json
     BASE_URI = 'https://apis.accela.com'
-    base_uri "https://apis.accela.com"
 
     ESCAPES = {
       "." => ".0",

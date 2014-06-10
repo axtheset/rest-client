@@ -13,6 +13,7 @@ require_relative './accela_rest_client/contacts'
 require_relative './accela_rest_client/documents'
 require_relative './accela_rest_client/inspections'
 require_relative './accela_rest_client/record'
+require_relative './accela_rest_client/utility'
 require_relative './accela_rest_client/workflow'
 
 

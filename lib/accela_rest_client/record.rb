@@ -3,14 +3,17 @@ module AccelaRestClient
     def create_partial_record(body)
       send_post('/v4/records/initialize', AuthTypes::NO_AUTH, body)
     end
-    def create_record_condition(record_id,body)
-      send_post("/v3p/records/#{record_id}/conditions", AuthTypes::ACCESS_TOKEN, body)
+    def get_record_contacts(id)
+      send_request("/v4/records/#{id}/contacts", AuthTypes::ACCESS_TOKEN)
     end
-    def update_record(id,body)
-      send_put("/v3/records/#{id}", AuthTypes::ACCESS_TOKEN, body)
+    def get_record_addresses(id, params)
+      send_request("/v4/records/#{id}/addresses", AuthTypes::NO_AUTH)
     end
-    def get_record_comments(id)
-      send_request("/v3/records/#{id}/comments", AuthTypes::ACCESS_TOKEN)
+    def get_record_customforms(id)
+      send_request("/v4/records/#{id}/customForms", AuthTypes::NO_AUTH)
+    end
+    def get_record_customforms_meta(id)
+      send_request("/v4/records/#{id}/customForms/meta", AuthTypes::NO_AUTH)
     end
   end
 end
