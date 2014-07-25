@@ -15,5 +15,14 @@ module AccelaRestClient
     def get_record_customforms_meta(id)
       send_request("/v4/records/#{id}/customForms/meta", AuthTypes::NO_AUTH)
     end
+    def get_record_documents(id, params={})
+      send_request("/v4/records/#{id}/documents", AuthTypes::ACCESS_TOKEN, params)
+    end
+    def get_record_workflow_tasks(id, params={})
+      send_request("/v4/records/#{id}/workflowTasks", AuthTypes::ACCESS_TOKEN, params)
+    end
+    def get_record_workflow_task_statuses(id, params={})
+      send_request("/v4/records/#{id}/workflowTasks/{id}/statuses", AuthTypes::ACCESS_TOKEN, params)
+    end
   end
 end
